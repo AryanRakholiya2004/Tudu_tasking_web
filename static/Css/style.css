@@ -1,0 +1,271 @@
+
+/* ===================================== Common css ===================================== */
+*
+{
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+body
+{
+    height: 100vh;
+    --light-grey: #ececec;
+    background-color: transparent;
+}
+ul
+{
+    list-style: none;
+}
+img
+{
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+a
+{
+    display: block;
+    text-decoration: none;
+}
+.bg-light-grey
+{
+    background: var(--light-grey);
+}
+.bg-blur
+{
+    backdrop-filter: blur(5px) brightness(80%);
+}
+.bg-blur-dark
+{
+    backdrop-filter: blur(10px) brightness(50%);
+}
+.bg-blur-light
+{
+    backdrop-filter: blur(15px) brightness(100%);
+    background-color: rgba(255, 255, 255,0.1);
+    /* border: 2px solid rgba(255, 255, 255, 0.2) !important; */
+}
+
+/* Main section */
+.main_section
+{
+    z-index: 20;
+}
+
+/* ===================================== Search box ===================================== */
+.form{
+
+    position: relative;
+}
+.form .fa-search{
+
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    color: #9ca3af;
+    transform: translateY(-50%);
+}
+.left-pan{
+    padding-left: 7px;
+}
+.left-pan i{
+   
+   padding-left: 10px;
+}
+.form-input{
+
+    height: 40px;
+    text-indent: 50px;
+    border-radius: 10px;
+}
+.form-input:focus{
+
+    box-shadow: none;
+    border:none;
+}
+
+/* ===================================== Top nav bar ===================================== */
+#top_bar
+{
+    z-index: 99;
+    border-bottom: 2px solid grey !important;
+}
+
+
+/* ===================================== Add task form ===================================== */
+#noteform
+{
+    backdrop-filter: brightness(50%) blur(2px);
+    z-index: 500;
+    top: 50%;
+    left: 50%;
+    display: none;
+}
+#noteform .form_box
+{
+    width: 30% !important;
+    top: 45%;
+    z-index: 1000;
+}
+
+
+/* ===================================== Add list ===================================== */
+#addlist
+{
+    display: none;
+}
+#inputlist, #inputlist:focus
+{
+    outline: none !important;
+    border: none !important;
+    box-shadow: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+.active_list
+{
+    background-color: white !important;
+    color: black !important;
+}
+.add-list
+{
+    min-height: 300px !important;
+    max-height: 500px !important;
+}
+
+/* ===================================== Settings ===================================== */
+#settings_tab
+{
+    transition: 0.3s;
+}
+.rot-180
+{
+    transform: rotate(180deg) translateY(6%);
+}
+#settings
+{
+    transition: 0.3s;
+}
+
+
+/* ===================================== Accordion fix ===================================== */
+.accordion-button::after
+{
+    display: none;
+}
+.accordion-button:focus
+{
+    box-shadow: none;
+}
+.accordion-collapse {
+    transition: 0.15s;
+  }
+
+
+/* task management */
+.border-start .row>div
+{
+    min-height: 250px;
+}
+
+
+
+/* ===================================== Background ===================================== */
+.bg_grid
+{
+    position: fixed;
+    /* background-color: rgb(51, 0, 255); */
+    background-color: rgb(58, 58, 58);
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(25 ,5%);
+    grid-gap: 0.15%;
+    overflow: hidden;
+    z-index: -10;
+}
+.bg_grid::after
+{
+    content: '';
+    position: absolute;
+    z-index: 0;
+    background-color: white;
+    height: 200px;
+    filter: blur(15px);
+    width: 100%;
+    animation: waves 10s 1s infinite linear;
+    overflow: hidden;
+}
+.bg_grid::before
+{
+    content: '';
+    position: absolute;
+    z-index: 0;
+    /* background-color: rgb(218, 23, 137); */
+    background-color: white;
+    height: 100%;
+    filter: blur(80px);
+    width: 600px;
+    animation: waves2 5s 1s infinite linear;
+    overflow: hidden;
+}
+@keyframes waves {
+    0%,100%
+    {
+        bottom: 0%;
+    }
+    50%
+    {
+        bottom: 100%;
+    }
+}
+@keyframes waves2 {
+    0%,100%
+    {
+        right: 0%;
+    }
+    50%
+    {
+        right: 100%;
+    }
+}
+.bg_grid > .box
+{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+.bg_grid > .box:hover
+{
+    background-color: white;
+}
+.border-none
+{
+    border: none !important;
+}
+
+/* sidebar */
+#sidebar
+{
+    border: none !important ;
+    border-right: 2px solid grey !important;
+}
+::-webkit-scrollbar
+{
+    display: none;
+}
+
+/* ===================================== Login \ Register page css ===================================== */
+
+.img_box_login
+{
+    object-fit: cover;
+    min-height: 700px !important;
+}
+.img_box_login img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
